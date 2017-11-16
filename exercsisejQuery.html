@@ -9,20 +9,70 @@
   	src="https://code.jquery.com/jquery-3.2.1.js"
   	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   	crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Mono" rel="stylesheet">
 
-</head>
+
 <style>
 
-table {
-  text-transform:capitalize;
-}
+      body{
+        background-color:black;
+      }
 
+      tbody{
+        background-color: black;
+      }
+      h1{
+        text-align: center;
+        font-family: 'Raleway', sans-serif;
+        font-family: 'Roboto Mono', monospace;
+        color:#9400D3;
+      }
 
+      h3 {
+        color: #7FFF00;
+      }
+      table{
+        text-transform : capitalize;
+        border-spacing: 0;
+        background-color: white;
+        border-color:black;
+        font-family: 'Raleway', sans-serif;
+        font-family: 'Roboto Mono', monospace;
+      }
+      .wrapper{
+        width: 60%;
+        margin: 0 auto;
 
-</style>
+      }
+
+      td{
+
+        border-bottom: 1px solid gray;
+      }
+
+      th{
+         border-bottom: 1px solid gray;
+         color:#FF1493;
+
+      }
+
+      table{
+        width:100%;
+          border: 1px solid white;
+
+      }
+
+      #surName {
+        color:  #0000FF;
+
+      }
+    </style>
+</head>
+
 <body>
 
-
+  <h1> Student <\Code> Class Form</h1>
+  <div class='wrapper'>
    <form id='userForm'>
     <input id="surName" type="text" placeholder="Full Name" class ="text-uppercase">
     <select id = 'selectCourse'>
@@ -32,63 +82,57 @@ table {
       <option id= "four">PHP</option>
     </select>
 
-    <button id="button"> Submit!</button>
+  <button id="button"> Submit!</button>
    
 
-    </form> 
+</form> 
 
 
-  <table id="thetable">
-    <tbody>
+   <table id="thetable">
+<thead>
 
-   
-   <tr>
-    <th>JavaScript</th>
+</thead>
+<tbody>
+    
+    <tr>
+      <td><h3>JavaScript</h3></td>
+      <td></td>
+    </tr>
+
+  <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+
   </tr>
+
+  <tr>
+  <td><h3>Node</h3></td>
+  <td></td>
       <tr>
-      <th>first name</th>
-      <th>last name</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
     </tr>
 
-
-   <tr>
-    <th>Node</th>
+  <tr><td><h3>C++</h3></td>
+  <td></td>
   </tr>
-    <tr>
-      <th>first name</th>
-      <th>last name</th>
-    </tr>
-
-   <tr>
-    <th>C++</th>
-  </tr>
-    <tr>
-      <th>first name</th>
-      <th>last name</th>
-    </tr>
-
-   <tr>
-    <th>PHP</th>
-  </tr>
-    <tr>
-      <th>first name</th>
-      <th>last name</th>
-    </tr>
-
-
-
-</tbody>
-</table>
-
-
-
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+   <tr><td><h3>PHP </h3></td>
+   <td></td>
+   </tr>
+        <tr>
+           <th>First Name</th>
+           <th>Last Name</th>
+         </tr>
+ </tbody>
+ </table>
+    </div>
 </body>
-</html>
 <script>
-
-
-
-
 
 $('#button').click(function(event){
 	event.preventDefault() 
@@ -106,7 +150,7 @@ $('#button').click(function(event){
 
   
 
-$('tbody').append(`<tr><td>${name}</td><td>${initial}</td></tr>`);
+$("td:contains('"+courseType+"')").parent().next().after('<tr><th>'+ name + '</th><th>'+ initial + '</th></tr>')
 
 
   } else {
@@ -116,31 +160,7 @@ $('tbody').append(`<tr><td>${name}</td><td>${initial}</td></tr>`);
 
 });
 
-
-// $('#selectCourse').on('click', function(course){
-//   course.preventDefault() 
-//   var courseType = $('#selectCourse').val()
-// console.log("selected course", courseType)
-//   var java = 'JavaScript'
-//   var node = 'Node'
-//   var cPlus = 'C++'
-//   var php = 'PHP'
-
-// if (coursetype == 'JavaScript'){
- 
-//   } else if (coursetype =='Node'){ 
-
-//   }if (coursetype == 'C++'){
-
-//   }if (coursetype == 'PHP'){
-
-
-//   }
-
-// });
 </script>
-
-
-
+</html>
 
 
