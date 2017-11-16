@@ -1,0 +1,146 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BCS App</title>
+
+	<script
+  	src="https://code.jquery.com/jquery-3.2.1.js"
+  	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  	crossorigin="anonymous"></script>
+
+</head>
+<style>
+
+table {
+  text-transform:capitalize;
+}
+
+
+
+</style>
+<body>
+
+
+   <form id='userForm'>
+    <input id="surName" type="text" placeholder="Full Name" class ="text-uppercase">
+    <select id = 'selectCourse'>
+      <option id= "one">JavaScript</option>
+      <option id="two">Node</option>
+      <option id= "three">C++</option>
+      <option id= "four">PHP</option>
+    </select>
+
+    <button id="button"> Submit!</button>
+   
+
+    </form> 
+
+
+  <table id="thetable">
+    <tbody>
+
+   
+   <tr>
+    <th>JavaScript</th>
+  </tr>
+      <tr>
+      <th>first name</th>
+      <th>last name</th>
+    </tr>
+
+
+   <tr>
+    <th>Node</th>
+  </tr>
+    <tr>
+      <th>first name</th>
+      <th>last name</th>
+    </tr>
+
+   <tr>
+    <th>C++</th>
+  </tr>
+    <tr>
+      <th>first name</th>
+      <th>last name</th>
+    </tr>
+
+   <tr>
+    <th>PHP</th>
+  </tr>
+    <tr>
+      <th>first name</th>
+      <th>last name</th>
+    </tr>
+
+
+
+</tbody>
+</table>
+
+
+
+</body>
+</html>
+<script>
+
+
+
+
+
+$('#button').click(function(event){
+	event.preventDefault() 
+  
+  var fullName = $('#surName').val() 
+  if (fullName){
+  var split = fullName.split(' ');
+	var name = split[0];
+  // console.log("name", name)
+  var last = split[1];
+  var initial = last.charAt(0);
+
+  var courseType = $('#selectCourse').val()
+  // console.log("name", name, "initial", initial, "selected course", courseType)
+
+  
+
+$('tbody').append(`<tr><td>${name}</td><td>${initial}</td></tr>`);
+
+
+  } else {
+
+    alert('correct format is first name + space + surname')
+  }
+
+});
+
+
+// $('#selectCourse').on('click', function(course){
+//   course.preventDefault() 
+//   var courseType = $('#selectCourse').val()
+// console.log("selected course", courseType)
+//   var java = 'JavaScript'
+//   var node = 'Node'
+//   var cPlus = 'C++'
+//   var php = 'PHP'
+
+// if (coursetype == 'JavaScript'){
+ 
+//   } else if (coursetype =='Node'){ 
+
+//   }if (coursetype == 'C++'){
+
+//   }if (coursetype == 'PHP'){
+
+
+//   }
+
+// });
+</script>
+
+
+
+
+
